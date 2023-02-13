@@ -1,0 +1,43 @@
+.my-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+    width: 752.215px;
+    max-width: 57.5%;
+    gap: var(--rem16);
+}
+
+
+.profile-descripton {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--rem07);
+}
+
+.profile-picture {
+    width: var(--rem32);
+    height: var(--rem32);
+}
+
+.profile-titles {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: var(--rem05);
+}
+
+@media (max-width: 800px) {
+    .my-profile{
+        width: 100%;
+        max-width: 100%;
+        gap: var(--rem25);
+    }
+    .profile-titles{
+        width: max-content;
+        max-width: 83%;
+        max-height: var(--rem30);
+    }
+}

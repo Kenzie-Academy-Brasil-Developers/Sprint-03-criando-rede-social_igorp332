@@ -1,23 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<html lang="pt-br">
+  
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <link rel="stylesheet" href="./src/styles/reset.css">
+  <link rel="stylesheet" href="./src/styles/texts.css">
+  <link rel="stylesheet" href="./src/styles/buttons.css">
+  <link rel="stylesheet" href="./src/styles/inputs.css">
+  <link rel="stylesheet" href="./src/styles/header.css">
+  <link rel="stylesheet" href="./src/styles/myProfile.css">
+  <link rel="stylesheet" href="./src/styles/feed.css">
+  <link rel="stylesheet" href="./src/styles/footer.css">
+  <link rel="stylesheet" href="./src/styles/aside.css">
+  <link rel="stylesheet" href="./src/styles/modal.css">
+  <link rel="stylesheet" href="./src/styles/style.css">
+  <script src="./src/scripts/index.js" defer></script>
+  <script src="./src/scripts/post.js"></script>
+  <script src="./src/scripts/sugestUsers.js"></script>
+  <script src="./src/scripts/users.js"></script>
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="./src/styles/reset.css" />
-    <link rel="stylesheet" href="./src/styles/index.css" />
+  <title>Rede Social</title>
+</head>
 
-    <!-- FONTE -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
+<body>
+  <header>
+    <div class="home-head container">
+      <a href="#">
+        <img src="./src/assets/img/logo.svg" alt="logo">
+      </a>
+      <button class="text2 bttn bttn-white">Sair</button>
+    </div>
+  </header>
+  <main class="main-container">
+    <div class="container">
+      <div class="home-content">
+        <section class="my-profile">
+          <div class="profile-descripton">
+            <img class="profile-picture" src="./src/assets/img/user1.svg" alt="Samuel Leão">
+            <div class="profile-titles">
+              <h1 class="title2 profile-name">Samuel Leão</h1>
+              <p class="text2 formation">Front End and Engineer</p>
+            </div>
+          </div>
+          <form class="new-post" id="post-form">
+            <input class="post-title" type="text" name="title" placeholder=" Título do post" id="post-title"
+            required>
+            <textarea class="post-content2" name="text" id="post-text" placeholder="Digite sua descrição"
+            required></textarea>
+            <button class="text2 bttn bttn-brand " type="submit" id="post-button">Postar</button>
+          </form>
+        </section>
+        <aside class="suggested-friends">
+          <h2 class="title2">Sugestões para seguir</h2>
+          <ul class="suggest-list"></ul>
+        </aside>
+        <section class="posts">
+          <h2 class="title1">Posts</h2>
+          <ul class="feed-posts"></ul>
+        </section>
+      </div>
+    </div>
+  </main>
+  <div id="modal-container"></div>
+  
+</body>
 
-    <title>Criando rede social</title>
-  </head>
-  <body></body>
 </html>

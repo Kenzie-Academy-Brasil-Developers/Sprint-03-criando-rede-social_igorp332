@@ -1,51 +1,68 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video, button, input {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-  box-sizing: border-box;
-  font-family: 'Inter', sans-serif;
-  outline: none;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
 }
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+
+:root {
+    --color-brand2: #364FC7;
+    --color-like: #D7443E;
+    --color-brand: #4263EB;
+    --color-brandh: #0c31c6;
+    --color-gray0: #0A0C0D;
+    --color-gray1: #212529;
+    --color-gray2: #495057;
+    --color-gray3: #868E96;
+    --color-gray4: #DEE2E6;
+    --color-gray5: #F8F9FA;
+    --color-white: #ffffff;
+    --color-gray-opacity-1: #21252980;
+    
+    --font-family-Iss: "Inter", sans-serif;
+    
+    --btn-border1-0: 1px solid var(--color-brand);
+    --btn-border1-1: 1px solid var(--color-gray1);
+    --btn-border1-1h: 1px solid var(--color-gray0);
+    --btn-border2-0: 2px solid var(--color-brand);
+    --btn-border2-0h: 2px solid var(--color-brandh);
+    --btn-border2-1: 2px solid var(--color-gray1);
+    --btn-border2-1h: 2px solid var(--color-gray0);
+    --btn-border2-1w: 2px solid var(--color-gray5);
+    
+    --ipt-border2-4: 2px solid var(--color-gray4);
+    
+    --radius-4: 0.25rem; /* 4px*/
+    --radius-8: 0.5rem; /* 8px*/
+    --radius-16: 1rem; /* 16px*/
+    
+    --btn-padding1: 0 0.75rem; /* 0 12px */
+    --ipt-padding1: 1rem 1.25rem; /* 16px 20px */
+    --txt-padding1: 1.75rem 1.25rem; /* 16px 20px */
+    
+    --rem05: 0.5rem; /* 8px */
+    --rem06: 0.625rem; /* 10px */
+    --rem07: 0.75rem; /* 12px */
+    --rem08: 0.875rem; /* 14px */
+    --rem10: 1rem; /* 16px */
+    --rem11: 1.125rem; /* 18px */
+    --rem12: 1.25rem; /*20px*/
+    --rem13: 1.375rem; /*22px*/
+    --rem15: 1.5rem; /* 24px */
+    --rem16: 1.625rem; /* 26px */
+    --rem17: 1.75rem; /* 28px*/
+    --rem20: 2rem; /* 32px */
+    --rem23: 2.375rem; /* 38px */
+    --rem25: 2.5rem; /* 40px */
+    --rem30: 2.5rem; /* 48px */
+    --rem32: 3.25rem; /* 52px */
+    --rem38: 3.813rem /* 61px */
 }
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
+
+.container{
+    width: 100%;
 }
