@@ -24,18 +24,29 @@ postButton.addEventListener('click', (event) => {
 
 });
 
+// function renderPosts(postList, userList, callback) {
+//     feedPosts.innerHTML = '';
+//     for (let e = 0; e < postList.length; e++) {
+//         const postElement = postList[e];
+//         for (let i = 0; i < userList.length; i++) {
+//             const userElement = userList[i];
+//             if (postElement.user == userElement.id) {
+//                 feedPosts.append(callback(postElement, userElement));
+//             }
+//         }
+//     }
+// }
+
 function renderPosts(postList, userList, callback) {
     feedPosts.innerHTML = '';
-    for (let e = 0; e < postList.length; e++) {
-        const postElement = postList[e];
-        for (let i = 0; i < userList.length; i++) {
-            const userElement = userList[i];
+    postList.forEach(postElement =>{
+        userList.forEach(userElement =>{
             if (postElement.user == userElement.id) {
                 feedPosts.append(callback(postElement, userElement));
             }
-        }
+        })
+    })
     }
-}
 
 function postCreate(post, user) {
     const friendsPost = document.createElement('li');
@@ -115,18 +126,29 @@ function postCreate(post, user) {
 
 renderPosts(posts, users, postCreate);
 
+// function renderSuggests(userList, idList) {
+//     suggestList.innerHTML = '';
+//     for (let u = 0; u < userList.length; u++) {
+//         const elementUser = userList[u];
+//         for (let i = 0; i < idList.length; i++) {
+//             const elementId = idList[i];
+//             if (elementUser.id == elementId) {
+//                 suggestList.append(suggestsCreate(elementUser))
+//             }
+//         }
+//     }
+// }
+
 function renderSuggests(userList, idList) {
     suggestList.innerHTML = '';
-    for (let u = 0; u < userList.length; u++) {
-        const elementUser = userList[u];
-        for (let i = 0; i < idList.length; i++) {
-            const elementId = idList[i];
+    userList.forEach(elementUser =>{
+        idList.forEach(elementId =>{
             if (elementUser.id == elementId) {
                 suggestList.append(suggestsCreate(elementUser))
             }
-        }
-    }
-}
+        })
+    })
+};
 
 renderSuggests(users, sugestUsers);
 
@@ -173,16 +195,26 @@ function suggestsCreate(user) {
     return suggestItem
 }
 
+// function renderModals(postList, userList, callback, htmlReference) {
+//     for (let index = 0; index < postList.length; index++) {
+//         const elementP = postList[index];
+//         for (let i = 0; i < userList.length; i++) {
+//             const elementU = userList[i];
+//             if (elementP.user == elementU.id) {
+//                 htmlReference.append(callback(elementP, elementU));
+//             }
+//         }
+//     }
+// }
+
 function renderModals(postList, userList, callback, htmlReference) {
-    for (let index = 0; index < postList.length; index++) {
-        const elementP = postList[index];
-        for (let i = 0; i < userList.length; i++) {
-            const elementU = userList[i];
+    postList.forEach(elementP => {
+        userList.forEach(elementU => {
             if (elementP.user == elementU.id) {
                 htmlReference.append(callback(elementP, elementU));
             }
-        }
-    }
+        });
+    });
 }
 
 function modalCreate(post, user) {
