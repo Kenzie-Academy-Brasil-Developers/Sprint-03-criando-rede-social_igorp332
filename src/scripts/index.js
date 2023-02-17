@@ -4,6 +4,26 @@ const modalContainer = document.getElementById('modal-container')
 const postButton = document.getElementById('post-button');
 const postForm = document.getElementById('post-form')
 
+// postButton.addEventListener('click', (event) => {
+//     const newPostObject = {
+//         id_post: 0, 
+//         user: 1,
+//     }
+//     event.preventDefault();
+//     const inputsPosts = postForm.children;
+//     for (let i = 0; i < inputsPosts.length; i++) {
+//         const element = inputsPosts[i];
+//         if(element.name){
+//             newPostObject[element.name] = element.value;
+//         }
+//     }
+//     posts.unshift(newPostObject)
+//     renderPosts(posts, users, postCreate);
+//     renderModals(posts, users, modalCreate, modalContainer)
+//     postButton.classList.toggle('disable-button');
+
+// });
+
 postButton.addEventListener('click', (event) => {
     const newPostObject = {
         id_post: 0, 
@@ -11,17 +31,15 @@ postButton.addEventListener('click', (event) => {
     }
     event.preventDefault();
     const inputsPosts = postForm.children;
-    for (let i = 0; i < inputsPosts.length; i++) {
-        const element = inputsPosts[i];
-        if(element.name){
-            newPostObject[element.name] = element.value;
-        }
+inputsPosts.forEach(element =>{
+    if(element.name){
+        newPostObject[element.name] = element.value;
     }
-    posts.unshift(newPostObject)
+})
+posts.unshift(newPostObject)
     renderPosts(posts, users, postCreate);
     renderModals(posts, users, modalCreate, modalContainer)
     postButton.classList.toggle('disable-button');
-
 });
 
 // function renderPosts(postList, userList, callback) {
